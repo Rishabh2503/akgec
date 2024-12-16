@@ -75,9 +75,23 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit}>    
+    <div className="App" style={{
+      padding: '20px',
+      maxWidth: '800px',
+      margin: '0 auto'
+    }}>
+      <h1 style={{
+        color: '#333',
+        textAlign: 'center',
+        marginBottom: '30px'
+      }}>Register</h1>
+      
+      <form onSubmit={handleSubmit} style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '15px',
+        marginBottom: '40px'
+      }}>    
         <input 
           type="text" 
           name="name" 
@@ -85,6 +99,12 @@ function App() {
           onChange={handleChange}
           placeholder='Name' 
           required 
+          style={{
+            padding: '10px',
+            fontSize: '16px',
+            borderRadius: '4px',
+            border: '1px solid #ddd'
+          }}
         />
         <input 
           type="email" 
@@ -93,6 +113,12 @@ function App() {
           onChange={handleChange}
           placeholder='Email' 
           required 
+          style={{
+            padding: '10px',
+            fontSize: '16px',
+            borderRadius: '4px',
+            border: '1px solid #ddd'
+          }}
         />
         <input 
           type="text" 
@@ -101,6 +127,12 @@ function App() {
           onChange={handleChange}
           placeholder='Phone' 
           required 
+          style={{
+            padding: '10px',
+            fontSize: '16px',
+            borderRadius: '4px',
+            border: '1px solid #ddd'
+          }}
         />
         <input 
           type="text" 
@@ -109,28 +141,85 @@ function App() {
           onChange={handleChange}
           placeholder='Company' 
           required 
+          style={{
+            padding: '10px',
+            fontSize: '16px',
+            borderRadius: '4px',
+            border: '1px solid #ddd'
+          }}
         />
-        <button type="submit">Register</button>
+        <button type="submit" style={{
+          padding: '12px',
+          fontSize: '16px',
+          backgroundColor: '#007bff',
+          color: 'white',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer',
+          transition: 'background-color 0.3s'
+        }}>Register</button>
       </form>
 
-      <div className="users-list">
-        <h2>Registered Users</h2>
-        <table>
+      <div className="users-list" style={{
+        marginTop: '30px'
+      }}>
+        <h2 style={{
+          color: '#333',
+          marginBottom: '20px'
+        }}>Registered Users</h2>
+        
+        <table style={{
+          width: '100%',
+          borderCollapse: 'collapse',
+          marginTop: '20px'
+        }}>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Company</th>
+              <th style={{
+                backgroundColor: '#f8f9fa',
+                padding: '12px',
+                borderBottom: '2px solid #dee2e6',
+                textAlign: 'left'
+              }}>Name</th>
+              <th style={{
+                backgroundColor: '#f8f9fa',
+                padding: '12px',
+                borderBottom: '2px solid #dee2e6',
+                textAlign: 'left'
+              }}>Email</th>
+              <th style={{
+                backgroundColor: '#f8f9fa',
+                padding: '12px',
+                borderBottom: '2px solid #dee2e6',
+                textAlign: 'left'
+              }}>Phone</th>
+              <th style={{
+                backgroundColor: '#f8f9fa',
+                padding: '12px',
+                borderBottom: '2px solid #dee2e6',
+                textAlign: 'left'
+              }}>Company</th>
             </tr>
           </thead>
           <tbody>
             {users.map(user => (
               <tr key={user.id}>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.phone}</td>
-                <td>{user.company.name}</td>
+                <td style={{
+                  padding: '12px',
+                  borderBottom: '1px solid #dee2e6'
+                }}>{user.name}</td>
+                <td style={{
+                  padding: '12px',
+                  borderBottom: '1px solid #dee2e6'
+                }}>{user.email}</td>
+                <td style={{
+                  padding: '12px',
+                  borderBottom: '1px solid #dee2e6'
+                }}>{user.phone}</td>
+                <td style={{
+                  padding: '12px',
+                  borderBottom: '1px solid #dee2e6'
+                }}>{user.company.name}</td>
               </tr>
             ))}
           </tbody>
